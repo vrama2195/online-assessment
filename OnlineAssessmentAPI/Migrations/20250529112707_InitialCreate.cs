@@ -16,7 +16,8 @@ namespace OnlineAssessmentAPI.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RequestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RequestId = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "199999999, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RequestName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Requestor = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -47,7 +48,7 @@ namespace OnlineAssessmentAPI.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RequestId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RequestId = table.Column<long>(type: "bigint", nullable: false),
                     CandidateName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Match = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),

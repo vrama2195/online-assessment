@@ -4,8 +4,8 @@ namespace OnlineAssessmentAPI.Models;
 
 public class JobDetailsModel
 {
-    public Guid? Id { get; set; }
-        public string? RequestId { get; set; }
+        public Guid? Id { get; set; }
+        public long RequestId { get; set; }
         public string? Description { get; set; }
         public string? RequestName { get; set; }
         public string? Requestor { get; set; }

@@ -57,9 +57,8 @@ namespace OnlineAssessmentAPI.Migrations
                     b.Property<DateOnly>("ModifiedDate")
                         .HasColumnType("date");
 
-                    b.Property<string>("RequestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("RequestId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("SkillMatch")
                         .IsRequired()
@@ -128,9 +127,11 @@ namespace OnlineAssessmentAPI.Migrations
                     b.Property<string>("ProjectCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RequestId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("RequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("RequestId"), 199999999L);
 
                     b.Property<string>("RequestName")
                         .HasColumnType("nvarchar(max)");
